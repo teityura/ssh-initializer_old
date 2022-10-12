@@ -1,0 +1,16 @@
+INITIALIZE_USER: ubuntu
+
+USERS:
+  - ubuntu
+
+PASSWORD: "hogehoge"
+
+GROUP_NAME: kube
+
+GROUP_PARAMS:
+  - { name: kubem1, ip: 10.10.10.11 }
+  - { name: kubem2, ip: 10.10.10.12 }
+  - { name: kubem3, ip: 10.10.10.13 }
+  - { name: kubew1, ip: 10.10.10.21 }
+  - { name: kubew2, ip: 10.10.10.22 }
+  - { name: kubew3, ip: 10.10.10.23 }

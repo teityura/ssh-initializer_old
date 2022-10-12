@@ -1,0 +1,14 @@
+- hosts: localhost
+  gather_facts: true
+  roles:
+    - role: ssh
+      tags: ssh
+
+- hosts: all
+  gather_facts: true
+  user: "{{ INITIALIZE_USER }}"
+  become: true
+  become_method: sudo
+  roles:
+    - role: user
+      tags: user

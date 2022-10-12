@@ -1,0 +1,5 @@
+- name: Set authorized_key
+  authorized_key:
+    user: "{{ item }}"
+    key: "{{ lookup('file', '{{ playbook_dir }}/.ssh/{{ GROUP_NAME }}.id_rsa.pub')}}"
+  with_items: "{{ USERS + ['root'] }}"

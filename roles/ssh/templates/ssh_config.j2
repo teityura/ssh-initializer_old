@@ -1,0 +1,11 @@
+Host *
+  ServerAliveInterval 59
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+
+{% for host in GROUP_PARAMS %}
+Host {{ host.name }}
+  Hostname {{ host.ip }}
+  User root
+  IdentityFile {{ playbook_dir }}/.ssh/{{ GROUP_NAME }}.id_rsa
+{% endfor %}

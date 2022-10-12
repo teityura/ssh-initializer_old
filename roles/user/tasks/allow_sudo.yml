@@ -1,0 +1,7 @@
+- name: Allow sudo command
+  lineinfile:
+    create: true
+    dest: "/etc/sudoers.d/{{ item }}"
+    line: "{{ item }} ALL=(ALL) NOPASSWD: ALL"
+    validate: "visudo -cf %s"
+  with_items: "{{ USERS }}"

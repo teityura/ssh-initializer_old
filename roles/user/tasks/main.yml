@@ -1,0 +1,4 @@
+- include: add_authorized_key.yml
+- include: allow_sudo.yml
+- include: allow_root_login.yml
+- include: set_password.yml
